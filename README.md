@@ -1,10 +1,10 @@
-# 🎬 Celebridades API
+# Celebridades API
 
 API REST desenvolvida com **Spring Boot** para gerenciamento de celebridades, permitindo operações de CRUD completo com validações e tratamento de erros padronizado.
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 | Tecnologia | Versão |
 |---|---|
@@ -18,7 +18,7 @@ API REST desenvolvida com **Spring Boot** para gerenciamento de celebridades, pe
 
 ---
 
-## ▶️ Como Rodar a Aplicação
+## Como Rodar a Aplicação
 
 ### Pré-requisitos
 
@@ -29,7 +29,7 @@ API REST desenvolvida com **Spring Boot** para gerenciamento de celebridades, pe
 
 ```bash
 git clone <url-do-repositorio>
-cd memeapi
+cd celebridadeapi
 ```
 
 ### 2. Execute a aplicação
@@ -65,13 +65,13 @@ http://localhost:8080/api/celebridades
 
 ---
 
-## 📋 Endpoints da API
+## Endpoints da API
 
 **Base URL:** `http://localhost:8080/api/celebridades`
 
 ---
 
-### 📦 Modelo de Dados
+### Modelo de Dados
 
 #### Request Body (`CelebridadeRequestDTO`)
 
