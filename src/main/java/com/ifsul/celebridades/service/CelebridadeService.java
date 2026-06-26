@@ -1,14 +1,17 @@
 package com.ifsul.celebridades.service;
 
+import java.util.List;
+
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Service;
+
 import com.ifsul.celebridades.dto.CelebridadeRequestDTO;
 import com.ifsul.celebridades.dto.CelebridadeResponseDTO;
 import com.ifsul.celebridades.exception.CelebridadeNotFoundException;
 import com.ifsul.celebridades.model.Celebridade;
 import com.ifsul.celebridades.repository.CelebridadeRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +26,7 @@ public class CelebridadeService {
                 .toList();
     }
 
-    public CelebridadeResponseDTO buscarPorId(Long id) {
+    public CelebridadeResponseDTO buscarPorId(@NonNull Long id) {
         Celebridade celebridade = repository.findById(id)
                 .orElseThrow(() -> new CelebridadeNotFoundException(id));
         return CelebridadeResponseDTO.fromEntity(celebridade);
