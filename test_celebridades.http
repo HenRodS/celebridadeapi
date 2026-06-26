@@ -1,0 +1,98 @@
+### ============================================================
+### API REST - Celebridades
+### Base URL: http://localhost:8080/api/celebridades
+### ============================================================
+
+### [1] GET - Listar todas as celebridades
+GET http://localhost:8080/api/celebridades
+Accept: application/json
+
+###
+
+### [2] GET - Buscar celebridade por ID (existe)
+GET http://localhost:8080/api/celebridades/1
+Accept: application/json
+
+###
+
+### [3] GET - Buscar celebridade por ID (não existe → 404)
+GET http://localhost:8080/api/celebridades/999
+Accept: application/json
+
+###
+
+### [4] GET - Filtrar por nome
+GET http://localhost:8080/api/celebridades?nome=messi
+Accept: application/json
+
+###
+
+### [5] GET - Filtrar por motivo da fama
+GET http://localhost:8080/api/celebridades?motivoFama=ator
+Accept: application/json
+
+###
+
+### [6] POST - Cadastrar nova celebridade (201 Created)
+POST http://localhost:8080/api/celebridades
+Content-Type: application/json
+
+{
+  "nome": "Anitta",
+  "idade": 31,
+  "motivoFama": "Cantora"
+}
+
+###
+
+### [7] POST - Dados inválidos (400 Bad Request)
+POST http://localhost:8080/api/celebridades
+Content-Type: application/json
+
+{
+  "nome": "",
+  "idade": -5,
+  "motivoFama": ""
+}
+
+###
+
+### [8] PUT - Atualizar celebridade (200 OK)
+PUT http://localhost:8080/api/celebridades/1
+Content-Type: application/json
+
+{
+  "nome": "Lionel Messi",
+  "idade": 38,
+  "motivoFama": "Futebolista - GOAT"
+}
+
+###
+
+### [9] PUT - Atualizar celebridade inexistente (404)
+PUT http://localhost:8080/api/celebridades/999
+Content-Type: application/json
+
+{
+  "nome": "Fantasma",
+  "idade": 99,
+  "motivoFama": "Ninguém"
+}
+
+###
+
+### [10] DELETE - Deletar celebridade (204 No Content)
+DELETE http://localhost:8080/api/celebridades/5
+Accept: application/json
+
+###
+
+### [11] DELETE - Deletar celebridade inexistente (404)
+DELETE http://localhost:8080/api/celebridades/999
+Accept: application/json
+
+###
+
+### [12] GET - Verificar remoção (listar novamente)
+GET http://localhost:8080/api/celebridades
+Accept: application/json
